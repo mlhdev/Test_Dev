@@ -16,7 +16,7 @@ data "aws_ssm_parameter" "linuxAmi" {
 }
 
 #Create and bootstrap EC2 in us-east-1
-resource "aws_instance" "ec2-vm" {
+resource "aws_instance" "EC2-linuxvm" {
   ami                         = data.aws_ssm_parameter.linuxAmi.value
   instance_type               = "t3.micro"
   associate_public_ip_address = true
